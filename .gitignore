@@ -35,3 +35,9 @@ out/
 
 ### VS Code ###
 .vscode/
+/.gradle/
+/build/
+!gradle/wrapper/gradle-wrapper.properties
+/gradle/wrapper/gradle-wrapper.jar
+/out/
+gradle.log
