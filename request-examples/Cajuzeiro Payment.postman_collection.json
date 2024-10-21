@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "cefcdcbb-970e-4929-8b54-8cb15564e10b",
+		"name": "Cajuzeiro Payment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autorizações",
+			"item": [
+				{
+					"name": "Autorização simples",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account\": 1,\n\t\"total_amount\": 10,\n\t\"mcc\": \"5411\",\n\t\"merchant\": \"PADARIA DO ZE               SAO PAULO BR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/authorizer/simple",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"authorizer",
+								"simple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Autorização por nome",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account\": 1,\n\t\"total_amount\": 10,\n\t\"mcc\": \"5411\",\n\t\"merchant\": \"PADARIA DO ZE               SAO PAULO BR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/authorizer/name",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"authorizer",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Autorização fallback",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account\": 1,\n\t\"total_amount\": 10,\n\t\"mcc\": \"5411\",\n\t\"merchant\": \"PADARIA DO ZE               SAO PAULO BR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/authorizer/fallback",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"authorizer",
+								"fallback"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Adm",
+			"item": [
+				{
+					"name": "Beneficios",
+					"item": [
+						{
+							"name": "Criar carteira de beneficios (FOOD)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"account_id\": 1,\n\t\"total_amount\": 10,\n\t\"category_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/payment/adm/wallet",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"payment",
+										"adm",
+										"wallet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criar carteira de beneficios (MEAL)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"account_id\": 1,\n\t\"total_amount\": 10,\n\t\"category_id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/payment/adm/wallet",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"payment",
+										"adm",
+										"wallet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criar carteira de beneficios (CASH)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"account_id\": 1,\n\t\"total_amount\": 10,\n\t\"category_id\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/payment/adm/wallet",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"payment",
+										"adm",
+										"wallet"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Deposito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account\": 1,\n\t\"total_amount\": 10,\n\t\"mcc\": \"5411\",\n\t\"merchant\": \"PADARIA DO ZE               SAO PAULO BR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/payment/adm/deposit",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"payment",
+								"adm",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pega transação por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account\": 1,\n\t\"total_amount\": 10,\n\t\"mcc\": \"5411\",\n\t\"merchant\": \"PADARIA DO ZE               SAO PAULO BR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/payment/adm/transaction/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"payment",
+								"adm",
+								"transaction",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pega transações da conta por ID Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account\": 1,\n\t\"total_amount\": 10,\n\t\"mcc\": \"5411\",\n\t\"merchant\": \"PADARIA DO ZE               SAO PAULO BR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/payment/adm/transaction/by-account/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"payment",
+								"adm",
+								"transaction",
+								"by-account",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
