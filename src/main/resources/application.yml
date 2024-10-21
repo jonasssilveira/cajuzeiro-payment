@@ -1,0 +1,24 @@
+spring:
+    application:
+        name: CajuzeiroPayment
+    datasource:
+        url: jdbc:postgresql://localhost:5431/cajuzeiro-payment
+        username: postgres
+        password: passcaju123
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+            ddl-auto: none # Use 'none' ou 'validate' para não sobrescrever a estrutura do banco
+        show-sql: true # Para logar as queries SQL no console durante a execução
+    flyway:
+        enabled: true
+        url: jdbc:postgresql://localhost:5431/cajuzeiro-payment
+        user: postgres
+        password: passcaju123
+        locations: classpath:/db/migration
+
+springdoc:
+    swagger-ui:
+        path: /swagger-ui-custom.html
+server:
+    port: 8080

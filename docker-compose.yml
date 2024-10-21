@@ -1,0 +1,37 @@
+version: '3.3'
+
+services:
+  postgresql:
+    image: postgres:17
+    container_name: postgres-cajuzeiro
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: passcaju123
+      POSTGRES_DB: cajuzeiro-payment
+    ports:
+      - "5431:5432"
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+    networks:
+      - cajuzeiro-payment
+
+  flyway:
+    image: flyway/flyway
+    container_name: flyway
+    volumes:
+      - ./migrations:/flyway/sql
+    environment:
+      FLYWAY_URL: jdbc:postgresql://postgresql:5432/cajuzeiro-payment?allowPublicKeyRetrieval=true&useSSL=false
+      FLYWAY_USER: postgres
+      FLYWAY_PASSWORD: passcaju123
+    command: migrate
+    depends_on:
+      - postgresql
+    networks:
+      - cajuzeiro-payment
+
+volumes:
+  postgresql-data:
+
+networks:
+  cajuzeiro-payment:
